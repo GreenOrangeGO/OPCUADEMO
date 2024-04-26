@@ -1,0 +1,9 @@
+kangaroohy:
+  milo:
+    primary: default
+    config:
+      default:
+        endpoint: opc.tcp://127.0.0.1:49320
+        security-policy: basic256sha256
+        username: ua_user
+        password: Go@12356561235656
