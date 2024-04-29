@@ -7,3 +7,9 @@ kangaroohy:
         security-policy: basic256sha256
         username: ua_user
         password: Go@12356561235656
+
+    pool:
+      max-idle: 5
+      max-total: 20
+      min-idle: 2
+      initial-size: 3
