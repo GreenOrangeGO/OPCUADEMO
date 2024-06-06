@@ -1,6 +1,7 @@
 package com.neu;
 
 import com.kangaroohy.milo.service.MiloService;
+import com.neu.service.SubService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -16,6 +17,9 @@ import java.util.List;
         @Autowired
         private MiloService miloService;
 
+        @Autowired
+        private SubService subService;
+
         @Override
         public void run(ApplicationArguments args) throws Exception {
             sub();
@@ -25,7 +29,8 @@ import java.util.List;
             List<String> ids = new ArrayList<>();
             ids.add("通道 1.设备 1.标记1");
             ids.add("通道 1.设备 1.标记2");
-            miloService.subscriptionFromOpcUa(ids, (id, value) -> log.info("subscription 点位：{} 订阅到消息：{}", id, value));
+//            miloService.subscriptionFromOpcUa(ids, (id, value) -> log.info("subscription 点位：{} 订阅到消息：{}", id, value));
+            miloService.subscriptionFromOpcUa(ids, (id, value) -> subService.addSubPoint(id,value));
         }
     }
 

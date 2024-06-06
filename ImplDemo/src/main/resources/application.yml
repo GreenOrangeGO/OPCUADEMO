@@ -13,3 +13,17 @@ kangaroohy:
       max-total: 20
       min-idle: 2
       initial-size: 3
+
+spring:
+  #数据库连接信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db01
+    username: root
+    password: 1234
+
+#MyBatis配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true

@@ -20,7 +20,7 @@ class ImplDemoApplicationTests {
 
     @Test
     public void read() throws Exception {
-        System.out.println(miloService.readFromOpcUa("通道 1.设备 1.标记1").getValue());
+        System.out.println(miloService.readFromOpcUa("通道 7.设备 1.PLC_1.Q1_1").getValue());
     }
     @Test
     public void write() throws Exception {
@@ -32,7 +32,7 @@ class ImplDemoApplicationTests {
     }
     @Test
     public void browseNode() throws Exception {
-        System.out.println(miloService.readFromOpcUa(miloService.browseNode("通道 1")).get(5).getValue());
+        System.out.println(miloService.readFromOpcUa(miloService.browseNode("通道 7")));
     }
     @Test
     public void browseRoot() throws Exception {
